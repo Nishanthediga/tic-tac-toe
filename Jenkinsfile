@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'nish_jdk'
+    }
+
     environment {
         SCANNER_HOME = tool 'SonarScanner'
     }
@@ -20,7 +24,7 @@ pipeline {
                 -Dsonar.projectKey=tic-tac-toe ^
                 -Dsonar.sources=. ^
                 -Dsonar.host.url=http://localhost:9000 ^
-                -Dsonar.token=squ_9202e0499cad49b9979cfe47ca459030d703970b
+                -Dsonar.token=YOUR_TOKEN
                 """
             }
         }
